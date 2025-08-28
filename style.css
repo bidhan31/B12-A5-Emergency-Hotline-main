@@ -192,9 +192,14 @@ body {
 
 
 
-@media (max-width: 768px) {
+@media screen and (max-width: 576px) {
   .main-section {
     flex-direction: column;
+  }
+  #card-section {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin-bottom: 20px;
   }
 
   .history-section {

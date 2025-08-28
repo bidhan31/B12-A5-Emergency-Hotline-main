@@ -30,7 +30,7 @@ document.querySelectorAll('.call-btn').forEach(button => {
     li.innerHTML =
       `<div style= "display: flex; justify-content: space-between;">
     <div>
-       <strong>${serviceName}</strong> <br> ${serviceNumber}
+       <strong>${serviceName}</strong> <br> <span style="color:gray;">${serviceNumber}</span>
      </div>
      <div>${time}</div>
     </div>`;
