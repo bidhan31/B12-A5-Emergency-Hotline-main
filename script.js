@@ -10,8 +10,6 @@ document.querySelectorAll('.heart-icon').forEach(icon => {
 });
 
 let coinCount = 100;
-
-
 document.querySelectorAll('.call-btn').forEach(button => {
   button.addEventListener('click', () => {
     if (coinCount < 20) {
@@ -33,6 +31,8 @@ document.querySelectorAll('.call-btn').forEach(button => {
     document.getElementById('call-history').appendChild(li);
   });
 });
+
+
 let copyCount = 0;
 document.querySelectorAll('.copy-btn').forEach(button => {
   button.addEventListener('click', () => {
@@ -41,7 +41,7 @@ document.querySelectorAll('.copy-btn').forEach(button => {
     navigator.clipboard.writeText(number).then(() => {
       copyCount++;
       document.getElementById('copy-count').textContent = copyCount;
-      alert(`Copied: ${number}`);
+      
     });
   });
 });
@@ -73,7 +73,7 @@ services.forEach(service => {
     navigator.clipboard.writeText(service.number).then(() => {
       copyCount++;
       document.getElementById("copy-count").textContent = copyCount;
-      alert(`Copied: ${service.number}`);
+      
     });
   });
 
