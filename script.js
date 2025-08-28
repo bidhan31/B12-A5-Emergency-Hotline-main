@@ -27,7 +27,7 @@ document.querySelectorAll('.call-btn').forEach(button => {
     alert(`Calling ${serviceName} at ${serviceNumber}`);
 
     const li = document.createElement('li');
-    li.textContent = `${serviceName}: ${time}`;
+    li.innerHTML = `${serviceName} <br> -${serviceNumber}   ${time}`;
     document.getElementById('call-history').appendChild(li);
   });
 });
@@ -84,9 +84,8 @@ services.forEach(service => {
     }
     
   });
-});
 
-const callHistoryList = document.getElementById('call-history');
+  const callHistoryList = document.getElementById('call-history');
 const clearBtn = document.getElementById('clear-history');
 
 function logCall(serviceName, serviceNumber) {
@@ -99,6 +98,10 @@ function logCall(serviceName, serviceNumber) {
 clearBtn.addEventListener('click', () => {
   callHistoryList.innerHTML = '';
 });
+
+});
+
+
 
 
 
