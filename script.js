@@ -27,7 +27,13 @@ document.querySelectorAll('.call-btn').forEach(button => {
     alert(`Calling ${serviceName} at ${serviceNumber}`);
 
     const li = document.createElement('li');
-    li.innerHTML = `${serviceName} <br> -${serviceNumber}   ${time}`;
+    li.innerHTML =
+      `<div style= "display: flex; justify-content: space-between;">
+    <div>
+       <strong>${serviceName}</strong> <br> ${serviceNumber}
+     </div>
+     <div>${time}</div>
+    </div>`;
     document.getElementById('call-history').appendChild(li);
   });
 });
@@ -41,13 +47,14 @@ document.querySelectorAll('.copy-btn').forEach(button => {
     navigator.clipboard.writeText(number).then(() => {
       copyCount++;
       document.getElementById('copy-count').textContent = copyCount;
-      
+
     });
   });
 });
 
 const cardSection = document.getElementById("card-section");
 const callHistory = document.getElementById("call-history");
+const time = document.getElementById("time")
 
 services.forEach(service => {
   const card = document.createElement("div");
@@ -73,7 +80,7 @@ services.forEach(service => {
     navigator.clipboard.writeText(service.number).then(() => {
       copyCount++;
       document.getElementById("copy-count").textContent = copyCount;
-      
+
     });
   });
 
@@ -82,22 +89,14 @@ services.forEach(service => {
       alert("Not enough coins to make a call.");
       return;
     }
-    
+
   });
 
-  const callHistoryList = document.getElementById('call-history');
-const clearBtn = document.getElementById('clear-history');
 
-function logCall(serviceName, serviceNumber) {
-  const time = new Date().toLocaleTimeString();
-  const entry = document.createElement('li');
-  entry.innerHTML = `<strong>${serviceName}</strong> - <strong>${serviceNumber}</strong> <span class="timestamp">at ${time}</span>`;
-  document.getElementById('call-history').appendChild(entry);
-}
 
-clearBtn.addEventListener('click', () => {
-  callHistoryList.innerHTML = '';
-});
+  clearBtn.addEventListener('click', () => {
+    callHistoryList.innerHTML = '';
+  });
 
 });
 
